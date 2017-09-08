@@ -12,6 +12,10 @@ namespace DotNetNotes.Controllers
         {
             return View();
         }
+        public IActionResult Note()
+        {
+            return View();
+        }
 
         public IActionResult About()
         {
