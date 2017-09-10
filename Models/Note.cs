@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DotNetNotes.Models
 {
-    // Add profile data for application users by adding properties to the ApplicationUser class
-    public class Note
+     public class Note
     {
         public int Id { get; set; }
         //[Required]

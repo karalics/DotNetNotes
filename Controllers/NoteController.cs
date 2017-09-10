@@ -1,7 +1,12 @@
 using System.Linq;
+using System.Threading;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using DotNetNotes.Models;
 using DotNetNotes.Data;
+
+
 
 namespace Controllers
 {
@@ -13,8 +18,10 @@ namespace Controllers
             _context = context;
         }
         public IActionResult Index()
-        {
-            return View();
+        {  
+            var data = _context.Note.OrderBy(a => a.Title);
+
+        return View(data);
         }
 
         public IActionResult Create()
@@ -28,8 +35,7 @@ namespace Controllers
         {
             _context.Note.Add(newNote);
             _context.SaveChanges();
-            //return RedirectToAction("Detail", new {Id = newOrder.Id});
-            return View("Index", newNote);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Edit()
