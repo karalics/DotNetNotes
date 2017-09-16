@@ -4,16 +4,25 @@
 <h2>All Notes</h2>
 <div>
   <div class="col-lg-12 col-md-12">
-  <div>
-      <a asp-action="Create"  asp-controller="Note" class="btn btn-default">New Note</a>
+      <div class="container">
+      <div class="row">
+        <div>
+            <a asp-action="Create"  asp-controller="Note" class="btn btn-default">New Note</a>
+        </div>
   </div>
+  </div>
+  <hr>
     @foreach (var item in Model)
     {
+        <div class="container">
+        <div class="row">
         <div class="panel panel-default">
             <div class="panel-heading">#@item.Id @item.Title</div>
             <div class="panel-body">@item.Text</div>
-            <a class="btn btn-danger">Delete</a> 
-            <a class="btn btn-default">Show Note</a>
+            <div>&emsp;<a class="btn btn-danger">Delete</a></div>
+            <br/>
+        </div>
+        </div>
         </div>
     }
   </div>
