@@ -7,7 +7,9 @@
 
 <div id="content">
     <h2>Create New Note</h2>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
     <form asp-action="Create" data-ajax="true" data-ajax-method="post" data-ajax-mode="replace" data-ajax-update="#content">
         <div class="form-horizontal">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -17,9 +19,22 @@
                     <input asp-for="Title" class="form-control" />
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
+                <div>&nbsp;</div>
+                <label asp-for="Priority" class="col-md-2 control-label"></label>
+                <div class="col-md-2">
+                <select asp-for="Priority" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
+                </div><div class="col-md-8">&nbsp;</div>
+                <div>&nbsp;</div>
                 <label asp-for="Text" class="col-md-2 control-label"></label>
                 <div class="col-md-10">
-                    <input asp-for="Text" class="form-control" />
+                    <textarea asp-for="Text" class="form-control"></textarea>
                     <span asp-validation-for="Text" class="text-danger"></span>
                 </div>
             </div>
@@ -30,6 +45,9 @@
             </div>
         </div>
     </form> 
+        </div>
+    </div>
+    </div>
 </div>
 
 @section Scripts {
