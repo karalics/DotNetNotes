@@ -45,6 +45,18 @@ namespace Controllers
             return View();
         }
 
+        public IActionResult Delete(int id)
+        {
+            var note = _context.Note.FirstOrDefault(x => x.Id == id);
+            if (note == null)
+            {
+                return NotFound();
+            }
+            _context.Note.Remove(note);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Error()
         {
             return View();

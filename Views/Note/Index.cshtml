@@ -24,7 +24,7 @@
             <div id="panelcontent-@item.Id" class="panel-body collapse">
                 @item.Text <br /><br />
                 &emsp;<a class="btn btn-success">Edit</a>
-                &emsp;<a class="btn btn-danger">Delete</a>
+                &emsp;<a asp-action="Delete" asp-controller="Note" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
             </div>
         </div>
         </div>
