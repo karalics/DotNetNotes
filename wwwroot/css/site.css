@@ -26,6 +26,30 @@ a.showlink {
     margin: -0.5em;
 }
 
+repeat {
+    display:inline;
+}
+
+repeat[n="1"]:before {
+   content: "★";
+}
+
+repeat[n="2"]:before {
+   content: "★★";
+}
+
+repeat[n="3"]:before {
+   content: "★★★";
+}
+
+repeat[n="4"]:before {
+   content: "★★★★";
+}
+
+repeat[n="5"]:before {
+   content: "★★★★★";
+}
+
 /* QR code generator */
 #qrCode {
     margin: 15px;
