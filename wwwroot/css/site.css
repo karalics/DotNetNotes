@@ -21,6 +21,11 @@
     width: 100%;
 }
 
+a.showlink {
+    float: right;
+    margin: -0.5em;
+}
+
 /* QR code generator */
 #qrCode {
     margin: 15px;

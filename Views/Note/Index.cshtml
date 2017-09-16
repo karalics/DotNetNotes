@@ -17,10 +17,14 @@
         <div class="container">
         <div class="row">
         <div class="panel panel-default">
-            <div class="panel-heading">#@item.Id @item.Title</div>
-            <div class="panel-body">@item.Text</div>
-            <div>&emsp;<a class="btn btn-danger">Delete</a></div>
-            <br/>
+            <div class="panel-heading">#@item.Id @item.Title 
+               <a class="btn btn-default showlink" data-toggle="collapse" data-target="#panelcontent-@item.Id">Show</a>
+            </div>
+            <div id="panelcontent-@item.Id" class="panel-body collapse">
+                @item.Text <br /><br />
+                &emsp;<a class="btn btn-success">Edit</a>
+                &emsp;<a class="btn btn-danger">Delete</a>
+            </div>
         </div>
         </div>
         </div>
