@@ -7,7 +7,6 @@ using DotNetNotes.Models;
 using DotNetNotes.Data;
 
 
-
 namespace Controllers
 {
     public class NoteController : Controller 
@@ -38,13 +37,6 @@ namespace Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Edit()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
         public IActionResult Delete(int id)
         {
             var note = _context.Note.FirstOrDefault(x => x.Id == id);
@@ -55,6 +47,29 @@ namespace Controllers
             _context.Note.Remove(note);
             _context.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            var note = _context.Note.FirstOrDefault(x => x.Id == id);
+            if (note == null)
+            {
+                return NotFound();
+            }
+            return View(note);
+        }
+                    
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind("Id, Title, Priority, Text")] Note note)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(note).State = EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        return View(note);
         }
 
         public IActionResult Error()
