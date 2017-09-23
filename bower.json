@@ -5,6 +5,11 @@
     "bootstrap": "3.3.7",
     "jquery": "2.2.0",
     "jquery-validation": "1.14.0",
-    "jquery-validation-unobtrusive": "3.2.6"
+    "jquery-validation-unobtrusive": "3.2.6",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.47"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-cli": "~1.2.0"
   }
 }
