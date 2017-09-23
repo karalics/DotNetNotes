@@ -18,7 +18,7 @@
         <div class="row">
         <div class="panel panel-default">
             <div class="panel-heading">
-                #@item.Id &emsp; <strong>@item.Title</strong> &emsp; <repeat n="@item.Priority"></repeat>
+                Due: @item.DueDate &emsp; <strong>@item.Title</strong> &emsp; <repeat n="@item.Priority"></repeat>
                <a class="btn btn-default showlink" data-toggle="collapse" data-target="#panelcontent-@item.Id">Show</a>
             </div>
             <div id="panelcontent-@item.Id" class="panel-body collapse">
