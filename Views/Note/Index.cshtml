@@ -18,8 +18,8 @@
             Order by: 
             <a asp-action=""  asp-controller="Note" class="btn btn-default">Title</a>
             <a asp-action=""  asp-controller="Note" class="btn btn-default">Creation Date</a>
-            <a asp-action=""  asp-controller="Note" class="btn btn-default">Due Date</a>
-            <a asp-action=""  asp-controller="Note" class="btn btn-default">Priority</a>
+            <a href="?oderby=due" class="btn btn-default">Due Date</a>
+            <a href="?orderby=prio" class="btn btn-default">Priority</a>
             <a asp-action=""  asp-controller="Note" class="btn btn-primary showlink">Hide Finished</a>
         </div>
   </div>
@@ -32,7 +32,7 @@
         <div class="panel @if(item.Finished == true){ @Html.Raw("panel-primary") } else { @Html.Raw("panel-default")}">
             <div class="panel-heading">
                 Due: @item.DueDate &emsp; <strong>@item.Title</strong> &emsp; <repeat n="@item.Priority"></repeat>
-               <a class="btn btn-default showlink" data-toggle="collapse" data-target="#panelcontent-@item.Id">Show</a>
+               <a class="btn btn-default showlink" data-toggle="collapse" data-target="#panelcontent-@item.Id">+</a>
             </div>
             <div id="panelcontent-@item.Id" class="panel-body collapse">
                 @item.Text <br /><br />

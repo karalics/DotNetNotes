@@ -16,9 +16,28 @@ namespace Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(string orderby = null)
         {  
             var data = _context.Note.OrderBy(a => a.Title);
+            switch (orderby)
+            {
+                case "prio":
+                data = _context.Note.OrderBy(a => a.Priority);
+                break;
+
+                case "due":
+                data = _context.Note.OrderBy(a => a.DueDate);
+                break;
+
+                //case "creation":
+                //data = _context.Note.OrderBy(a => a.CreateDate);
+                //break;
+
+                default:
+                data = _context.Note.OrderBy(a => a.Title);
+                break;
+            }
+            
 
         return View(data);
         }
