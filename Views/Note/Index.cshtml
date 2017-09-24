@@ -29,7 +29,7 @@
     {
         <div class="container">
         <div class="row">
-        <div class="panel panel-default">
+        <div class="panel @if(item.Finished == true){ @Html.Raw("panel-primary") } else { @Html.Raw("panel-default")}">
             <div class="panel-heading">
                 Due: @item.DueDate &emsp; <strong>@item.Title</strong> &emsp; <repeat n="@item.Priority"></repeat>
                <a class="btn btn-default showlink" data-toggle="collapse" data-target="#panelcontent-@item.Id">Show</a>

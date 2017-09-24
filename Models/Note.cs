@@ -16,5 +16,6 @@ namespace DotNetNotes.Models
         public DateTime DueDate { get; set; }
         public string Priority { get; set; }
         public string Text { get; set; }
+        public Boolean Finished {get; set; }
     }
 }
