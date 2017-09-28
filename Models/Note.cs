@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 namespace DotNetNotes.Models
 {
      public class Note
@@ -17,5 +17,11 @@ namespace DotNetNotes.Models
         public string Priority { get; set; }
         public string Text { get; set; }
         public Boolean Finished {get; set; }
+
+        public DateTime CreationDate { get{
+            return DateTime.Now;
+        }}
+        //[Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        //public DateTime CreatedUtc { get; set; }
     }
 }

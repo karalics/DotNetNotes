@@ -29,9 +29,9 @@ namespace Controllers
                 data = _context.Note.OrderBy(a => a.DueDate);
                 break;
 
-                //case "creation":
-                //data = _context.Note.OrderBy(a => a.CreateDate);
-                //break;
+                case "creation":
+                data = _context.Note.OrderBy(a => a.CreationDate);
+                break;
 
                 default:
                 data = _context.Note.OrderBy(a => a.Title);
@@ -80,7 +80,7 @@ namespace Controllers
                     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind("Id, Title, Priority, Text")] Note note)
+        public ActionResult Edit([Bind("Id, Title, Priority, DueDate, Text, Finished")] Note note)
         {
             if (ModelState.IsValid)
             {
