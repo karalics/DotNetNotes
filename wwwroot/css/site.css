@@ -29,9 +29,10 @@
     width: 100%;
 }
 
-a.showlink {
+.showlink {
     float: right;
-    margin: -0.5em;
+    margin: -0.65em;
+    margin-right: 1em;
 }
 
 repeat {
@@ -70,3 +71,17 @@ repeat[n="5"]:before {
         display: none;
     }
 }
+
+button.btn.collapsed:before
+{
+    content:'+' ;
+    display:block;
+    width:15px;
+}
+button.btn:before
+{
+    content:'-' ;
+    display:block;
+    width:15px;
+}
+
