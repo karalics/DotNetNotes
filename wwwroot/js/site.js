@@ -22,3 +22,16 @@ $(".change-style").click(()=>{
     }
 });
 
+$(".hider").click(() =>{
+    var link = $(this);
+    $(".is-finished").toggle(400, () => {
+        if ($(this).is(':hidden')){
+            link.text("Show Finished");
+        } else {
+            link.text("Hide Finished");
+        }
+    });
+    $(".hider").text("Show Finished");
+
+});
+
