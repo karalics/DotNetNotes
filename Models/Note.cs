@@ -14,7 +14,7 @@ namespace DotNetNotes.Models
         //[Display(Name = "Note Title")]
         public string Title { get; set; }
         public DateTime DueDate { get; set; }
-        public string Priority { get; set; }
+        public Int32 Priority { get; set; }
         public string Text { get; set; }
         public Boolean Finished {get; set; }
 

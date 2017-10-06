@@ -24,13 +24,13 @@ namespace DotNetNotes.Services
         using (var serviceScope = _provider.GetService<IServiceScopeFactory>().CreateScope())
         {
             var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
-            for(int i = 1; i< 10; i++)
+            for(int i = 1; i < 6; i++)
             {
                  context.Note.Add(new Note
                 {
-                   Title = "Beispiel Titel" + i,
-                   DueDate =DateTime.Now,
-                   Priority = "1",
+                   Title = "Eintrag Nummer " + i,
+                   DueDate =DateTime.Now.AddDays(-i),
+                   Priority = i,
                    Text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
                 });
             }

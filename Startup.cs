@@ -27,7 +27,7 @@ namespace DotNetNotes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase());
+                options.UseInMemoryDatabase("DotNetNotesMemoryDB"));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
