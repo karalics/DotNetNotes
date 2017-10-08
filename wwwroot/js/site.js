@@ -34,10 +34,10 @@ $(".change-style").click(()=>{
 
 var hidemode = localStorage.getItem("hidemode");
 if (hidemode === "true"){
-    $(".is-finished").hide(400);
+    $(".is-finished").hide();
     $(".hider").text("Show Finished");
 } else {
-    $(".is-finished").show(400);
+    $(".is-finished").show();
     $(".hider").text("Hide Finished");
 }
 
