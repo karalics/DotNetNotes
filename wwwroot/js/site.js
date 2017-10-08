@@ -7,16 +7,26 @@ if (localStorage.getItem("modus")=== "night"){
     $(".change-style").text("Night Modus");    
 }
 
+/*
+if (localStorage.getItem("showItemFinished")=== true){
+    $(".main").addClass("is-finished");
+    $(".change-style").text("Show Finished");    
+} else {
+    $(".main").removeClass("is-finished");
+    $(".change-style").text("Hide Finished");    
+}
+*/
+
 $(".change-style").click(()=>{
     var night = "night";
     var main = $(".main");
     
    if(main.hasClass(night)) {  
-     main.removeClass("night");
+     main.removeClass(night);
      $(".change-style").text("Night Modus");
      localStorage.setItem("modus", "day");
     } else {
-     main.addClass("night");
+     main.addClass(night);
      $(".change-style").text("Day Modus");
      localStorage.setItem("modus", "night");
     }
@@ -25,13 +35,12 @@ $(".change-style").click(()=>{
 $(".hider").click(() =>{
     var link = $(this);
     $(".is-finished").toggle(400, () => {
-        if ($(this).is(':hidden')){
-            link.text("Show Finished");
+        if ($(".is-finished").is(":hidden")) {
+            $(".hider").text("Show Finished");
         } else {
-            link.text("Hide Finished");
+            $(".hider").text("Hide Finished");
         }
     });
-    $(".hider").text("Show Finished");
-
+        
 });
 
