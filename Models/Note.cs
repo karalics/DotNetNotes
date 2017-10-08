@@ -17,10 +17,7 @@ namespace DotNetNotes.Models
         public Int32 Priority { get; set; }
         public string Text { get; set; }
         public Boolean Finished {get; set; }
-
-        public DateTime CreationDate { get{
-            return DateTime.Now;
-        }}
+        public DateTime CreationDate {get; set; }
         //[Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         //public DateTime CreatedUtc { get; set; }
     }

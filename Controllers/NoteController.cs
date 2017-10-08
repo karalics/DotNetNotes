@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DotNetNotes.Models;
 using DotNetNotes.Data;
-
+using System;
 
 namespace Controllers
 {
@@ -51,6 +51,7 @@ namespace Controllers
         [HttpPost]
         public IActionResult Create(Note newNote)
         {
+            newNote.CreationDate = DateTime.Now;
             _context.Note.Add(newNote);
             _context.SaveChanges();
             return RedirectToAction("Index");
@@ -80,7 +81,7 @@ namespace Controllers
                     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind("Id, Title, Priority, DueDate, Text, Finished")] Note note)
+        public ActionResult Edit([Bind("Id, Title, Priority, CreationDate, DueDate, Text, Finished")] Note note)
         {
             if (ModelState.IsValid)
             {
