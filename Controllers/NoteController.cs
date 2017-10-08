@@ -1,6 +1,4 @@
 using System.Linq;
-using System.Threading;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DotNetNotes.Models;
