@@ -32,15 +32,25 @@ $(".change-style").click(()=>{
     }
 });
 
+var hidemode = localStorage.getItem("hidemode");
+if (hidemode === "true"){
+    $(".is-finished").hide(400);
+    $(".hider").text("Show Finished");
+} else {
+    $(".is-finished").show(400);
+    $(".hider").text("Hide Finished");
+}
+
 $(".hider").click(() =>{
-    var link = $(this);
-    $(".is-finished").toggle(400, () => {
-        if ($(".is-finished").is(":hidden")) {
-            $(".hider").text("Show Finished");
-        } else {
-            $(".hider").text("Hide Finished");
-        }
+    if (localStorage.getItem("hidemode") === "true") {
+        $(".is-finished").show(400);
+        $(".hider").text("Hide Finished");
+        localStorage.setItem("hidemode", false);
+    } else {
+        $(".is-finished").hide(400);
+        $(".hider").text("Show Finished");
+        localStorage.setItem("hidemode", true);
+    }
     });
-        
-});
+
 
