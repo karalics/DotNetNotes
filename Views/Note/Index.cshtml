@@ -34,11 +34,16 @@
         <div class="row">
         <div class="panel @if(item.Finished == true){ @Html.Raw("panel-primary is-finished") } else { @Html.Raw("panel-default")}">
             <div class="panel-heading">
-                Due: @item.DueDate &emsp; <strong>@item.Title</strong> &emsp; 
-                <div>
-                    <repeat n="@item.Priority"></repeat>
-                    <button class="btn btn-default collapsed showlink" data-toggle="collapse" data-target="#panelcontent-@item.Id"></button>
-                    <a asp-action="Edit" aps-controller="Note" asp-route-id="@item.Id" class="btn btn-success showlink">Edit</a>
+                <div class="row">
+                    <div class="col-sm-8">
+                        Due: @item.DueDate &emsp; <strong>@item.Title</strong> &emsp;
+
+                        <repeat n="@item.Priority"></repeat>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-default collapsed showlink" data-toggle="collapse" data-target="#panelcontent-@item.Id"></button>
+                        <a asp-action="Edit" aps-controller="Note" asp-route-id="@item.Id" class="btn btn-success showlink">Edit</a>
+                    </div>
                 </div>
             </div>
             <div id="panelcontent-@item.Id" class="panel-body collapse">
