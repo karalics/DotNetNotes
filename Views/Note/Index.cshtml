@@ -12,16 +12,22 @@
     </div>
   </div>
   <hr class="container">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+        <p>Order by:</p>
+          </div>
+      </div>
+  </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
-                Order by:
+            <div class="col-sm-8 col-xs-12">
                 <a asp-action="" asp-controller="Note" class="btn btn-default">Title</a>
-                <a href="?orderby=creation" class="btn btn-default">Creation Date</a>
+                <a href="?orderby=creation" class="btn btn-default">C<span class="hidden-xs hidden-sm">reation</span> Date</a>
                 <a href="?orderby=due" class="btn btn-default">Due Date</a>
                 <a href="?orderby=prio" class="btn btn-default">Priority</a>
             </div>
-            <div class="col-sm-4" style="padding:10px;">
+            <div class="col-sm-4 col-xs-12" style="padding:10px;">
                 <a class="btn btn-primary showlink hider">Hide Finished</a>
                 <a class="btn btn-default showlink change-style">Style dark</a>
             </div>
